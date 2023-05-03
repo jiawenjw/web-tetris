@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tetris</title>
+    <script src="./scripts/app.js" defer></script>
+    <link rel="stylesheet" href="./styles/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+  </head>
+  <body>
+    <header>Tetris</header>
+    <audio id="background" src="./scripts/background.mp3" loop></audio>
+    <main>
+      <section class="grid"></section>
+      <section class="prompt">
+        <div class="nextBoardContainer">
+          <div class="nextBoard"></div>
+        </div>
+        <div class="result">
+          <div class="level">
+            <p>LEVEL</p>
+            <div class="levelBoard"></div>
+          </div>
+          <div class="lines">
+            <p>LINES</p>
+            <div class="lineBoard"></div>
+          </div>
+          <div class="score">
+            <p>SCORE</p>
+            <div class="scoreBoard"></div>
+          </div>
+        </div>
+        <div class="buttons">
+          <div>
+            <button class="playPause" value="play">
+              <i class="uil uil-play"></i>
+              <i class="uil uil-pause"></i>
+            </button>
+          </div>
+
+          <div>
+            <button class="reset"><i class="uil uil-redo"></i></button>
+          </div>
+          <div>
+            <button class="mute" value="music-on">
+              <i class="uil uil-music-note"></i>
+              <i class="uil uil-music-tune-slash"></i>
+            </button>
+          </div>
+          <div>
+            <button data-modal-target="#modal">
+              <i class="uil uil-setting"></i>
+            </button>
+            <div class="modal" id="modal">
+              <div class="modal-header">
+                <div class="title">Instructions</div>
+                <button data-close-button class="close-button">&times;</button>
+              </div>
+              <div class="modal-body">
+                <table class="instruction-table">
+                  <tr>
+                    <td>ACTION</td>
+                    <td>KEY</td>
+                  </tr>
+                  <tr>
+                    <td>MOVE LEFT</td>
+                    <td>&#8592;</td>
+                  </tr>
+                  <tr>
+                    <td>MOVE RIGHT</td>
+                    <td>&#8594;</td>
+                  </tr>
+                  <tr>
+                    <td>MOVE DOWN</td>
+                    <td>&#8595;</td>
+                  </tr>
+                  <tr>
+                    <td>CLOCKWISE ROTATE</td>
+                    <td>&#8593;</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+
+            <div class="modal" id="gameover-popup">
+              <div class="modal-header">
+                <div class="title">Game over</div>
+                <button data-close-button class="close-button">&times;</button>
+              </div>
+            </div>
+            <div id="overlay"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
