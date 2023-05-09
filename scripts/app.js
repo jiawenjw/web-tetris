@@ -155,7 +155,9 @@ function init() {
 
   class Tetromino {
     constructor(randomNum) {
-      const randomShape = listOfShapes[randomNum];
+      const shapes = JSON.parse(JSON.stringify(listOfShapes));
+      const randomShape = shapes[randomNum];
+      console.log({ randomShape });
       const randomColor = listOfColors[randomNum];
       this.randomNum = randomNum;
       this.color = randomColor;
